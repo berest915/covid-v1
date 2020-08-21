@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Navbar from './layout/navbar/Navbar';
+import Cards from './coms/Cards/Cards';
+import Charts from './coms/Charts/Charts';
+import CountrySelector from './coms/CountrySelector/CountrySelector';
+
+import RanState from './context/RanState';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<RanState>
+				<Navbar />
+				<>
+					<Cards />
+					<CountrySelector />
+					<Charts />
+				</>
+			</RanState>
+		</>
+	);
 }
 
 export default App;
